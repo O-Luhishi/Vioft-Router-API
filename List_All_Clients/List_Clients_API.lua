@@ -1,8 +1,10 @@
-local json = require ("dkjson")
+#!/usr/bin/lua
+
+local json = require ("root.dkjson")
 
 -- Take Bash Script Output & Returns It As A String
 function read_input_from_wifi_clients_script()
-  local text = assert(io.popen('./Sample_Bash_Script_Test.sh', 'r'))
+  local text = assert(io.popen('root/show_wifi_clients.sh', 'r'))
   local output = text:read('*a')
   text:close()
   return output
@@ -22,11 +24,15 @@ function create_connected_clients_array()
   return clients
 end
 
-output = create_connected_clients_array()
-local str = json.encode (output)
-print(str)
+function return_array()
+   client_table = create_connected_clients_array()
+   local st = json.encode(client_table)
+   return st
+end
 
-local handle = io.popen("pwd")
-local result = handle:read("*a")
-print(result)
-handle:close()
+function handle_request(env)
+        client_list_array = return_array()
+        uhttpd.send("Status: 200 OK\r\n")
+        uhttpd.send("Content-Type: text/plain\r\n\r\n")
+        uhttpd.send(client_list_array)
+end
