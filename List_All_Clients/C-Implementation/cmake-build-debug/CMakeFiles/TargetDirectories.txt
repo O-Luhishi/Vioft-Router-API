@@ -1,0 +1,3 @@
+/Users/oluhishi/Documents/Lunet/Vioft-API/List_All_Clients/C-Implementation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/oluhishi/Documents/Lunet/Vioft-API/List_All_Clients/C-Implementation/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/oluhishi/Documents/Lunet/Vioft-API/List_All_Clients/C-Implementation/cmake-build-debug/CMakeFiles/C_Implementation.dir
