@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/oluhishi/Documents/Lunet/Vioft-API/List_All_Clients/C-Implementation
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/oluhishi/Documents/Lunet/Vioft-API/List_All_Clients/C-Implementation/cmake-build-debug
