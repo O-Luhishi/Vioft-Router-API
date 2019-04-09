@@ -5,6 +5,6 @@ set(CMAKE_C_STANDARD 99)
 
 include_directories(/usr/local/include)
 
-set(SOURCE_FILES main.c demo.h)
+set(SOURCE_FILES unittest.c demo.c demo.h glapibase.h)
 
 add_executable(C_Implementation ${SOURCE_FILES})

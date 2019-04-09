@@ -1,10 +1,5 @@
-//
-// Created by Osama luhishi on 04/04/2019.
-//
-
-#ifndef C_IMPLEMENTATION_DEMO_H
-#define C_IMPLEMENTATION_DEMO_H
-
+#ifndef DEMO_H
+#define DEMO_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,4 +8,6 @@
 
 int demo_hello(json_object* input, json_object* output);
 
-#endif //C_IMPLEMENTATION_DEMO_H
+int get_list_of_connected_clients(json_object* input, json_object* output);
+
+#endif /* demo.h */
