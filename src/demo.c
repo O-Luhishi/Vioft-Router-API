@@ -18,6 +18,10 @@ int get_list_of_connected_clients(json_object* input, json_object* output){
         printf("Failed To Run Script \n");
         exit(1);
     }
+    while (fgets(path, sizeof(path)-1, fp) != NULL){
+        printf("%s", path);
+    }
+    pclose(fp);
     return 0;
 }
 

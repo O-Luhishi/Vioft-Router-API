@@ -1,2 +1,4 @@
-/List_All_Clients/C-Implementation/cmake-build-debug/*
-/List_All_Clients/C-Implementation/.idea/*
+/src/cmake-build-debug
+/src/.idea/*
+.idea/*
+.DS_Store
