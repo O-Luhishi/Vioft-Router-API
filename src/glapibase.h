@@ -1,17 +1,3 @@
-/*
- * gllibbase.h
- *
- * This is a base file for gl lib development. Interfaces
- * defined here will be called automatically to register your lib
- * to gl-arch framework. Do not modify this file unless you got
- * the permission from the architect.
- *
- *  Created on: Apr 25, 2017
- *      Author: Xiaoyong Wei
- *
- *  modify by lancer @ 2018.03.30
- */
-
 #ifndef GLLIBBASE_H_
 #define GLLIBBASE_H_
 

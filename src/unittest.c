@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "demo.h"
+#include "glapibase.h"
 
 
 void test_demo_hello()
@@ -30,12 +31,13 @@ void test_list_of_connected_devices()
 
 int main(int argc , char *argv[])
 {
-    test_demo_hello();
-    test_list_of_connected_devices();
-    if (argv[1] == NULL) {
+    if (argv[1] == NULL){
         printf("\n/demo/hostname_set result:\nUsage: demotest <hostname>\n\n");
         return -1;
+    }else if (!strcmp(argv[1], "/clients/list")) {
+        test_list_of_connected_devices();
+    }else if (!strcmp(argv[1], "/demo/hello")) {
+        test_demo_hello();
     }
-
     return 0;
 }
