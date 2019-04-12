@@ -34,7 +34,7 @@ int main(int argc , char *argv[])
     if (argv[1] == NULL){
         printf("\n/demo/hostname_set result:\nUsage: demotest <hostname>\n\n");
         return -1;
-    }else if (!strcmp(argv[1], "/clients/list")) {
+    }else if (!strcmp(argv[1], "/client/list")) {
         test_list_of_connected_devices();
     }else if (!strcmp(argv[1], "/demo/hello")) {
         test_demo_hello();
