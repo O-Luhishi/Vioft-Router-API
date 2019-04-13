@@ -8,6 +8,8 @@
 
 int demo_hello(json_object* input, json_object* output);
 
+json_object* bash_connected_clients_line_to_json( const char *line );
+
 int get_list_of_connected_clients(json_object* input, json_object* output);
 
 #endif /* demo.h */

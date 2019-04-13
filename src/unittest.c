@@ -21,12 +21,11 @@ void test_list_of_connected_devices()
 {
     json_object* input = json_object_new_object();
     json_object* output = json_object_new_object();
-
     get_list_of_connected_clients(input, output);
-    printf("\n/client/list:\n%s\n", json_object_to_json_string(output));
-
+    printf("Connected Clients:\n%s\n", json_object_to_json_string(output));
     json_object_put(input);
     json_object_put(output);
+
 }
 
 int main(int argc , char *argv[])
