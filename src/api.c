@@ -1,4 +1,4 @@
-#include "demo.h"
+#include "api.h"
 
 
 
@@ -47,16 +47,33 @@ json_object* bash_connected_clients_line_to_json( const char *line ) {
     return json;
 }
 
-///** The implementation of the GetAPIFunctions function **/
-#include "glapibase.h"
+int portscan(){
+    int sockfd, port;
+    struct hostent *he;
 
-static api_info_t gl_lstCgiApiFuctionInfo[] = {
-        map("/demo/hello", "get", demo_hello),
-        map("/client/list", "get", get_list_of_connected_clients),
-};
+    for(port=0; port<=65000; port++)
+    {
+        struct sockaddr_in their_addr; // connector's address information
+        if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
+        {
+            perror("socket");
+            exit(1);
+        }
 
-api_info_t* get_api_entity(int* pLen)
-{
-    (*pLen) = sizeof(gl_lstCgiApiFuctionInfo) / sizeof(gl_lstCgiApiFuctionInfo[0]);
-    return gl_lstCgiApiFuctionInfo;
+        their_addr.sin_family = AF_INET;    // host byte order
+        their_addr.sin_port = htons(port);  // short, network byte order
+        their_addr.sin_addr = *((struct in_addr *)he->h_addr);
+        memset(&(their_addr.sin_zero), '\0', 8);  // zero the rest of the struct
+
+        if (connect(sockfd, (struct sockaddr *)&their_addr, sizeof(struct sockaddr)) == -1)
+        {
+            close(sockfd);
+        }
+        else
+        {
+            printf("%i open\n", port);
+            close(sockfd);
+        }
+    }
 }
+

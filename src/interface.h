@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <json-c/json.h>
+#include "api.h"
 
 
 /** This defines a standard format for gl API functions.

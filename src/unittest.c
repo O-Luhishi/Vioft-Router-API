@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "demo.h"
-#include "glapibase.h"
+#include "api.h"
+#include "interface.h"
 
 
 void test_demo_hello()
@@ -25,7 +25,13 @@ void test_list_of_connected_devices()
     printf("Connected Clients:\n%s\n", json_object_to_json_string(output));
     json_object_put(input);
     json_object_put(output);
+}
 
+void test_port_scanning()
+{
+    json_object* input = json_object_new_object();
+    json_object* output = json_object_new_object();
+    portscan();
 }
 
 int main(int argc , char *argv[])
@@ -37,6 +43,8 @@ int main(int argc , char *argv[])
         test_list_of_connected_devices();
     }else if (!strcmp(argv[1], "/demo/hello")) {
         test_demo_hello();
+    }else if(!strcmp(argv[1], "services/portscan")){
+        test_port_scanning();
     }
     return 0;
 }

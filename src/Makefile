@@ -2,13 +2,13 @@ CC=gcc
 CFLAGS+=
 LDFLAGS+= -ljson-c
 
-all: libraries demotest
+all: libraries api
 	@echo "compile done"
 
 libraries:
-	$(CC) $(CFLAGS) -Wall demo.c -shared -fPIC -o libgldemo.so $(LDFLAGS)
+	$(CC) $(CFLAGS) -Wall api.c -shared -fPIC -o libgldemo.so $(LDFLAGS)
 
-demotest: unittest.o
+api: unittest.o
 	$(CC) $^ -o $@ $(LDFLAGS) -L. -lgldemo
 
 clean:
